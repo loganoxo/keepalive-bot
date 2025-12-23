@@ -1,0 +1,12 @@
+.DS_Store
+/.idea/
+/.history/
+test
+__pycache__
+*.iml
+secret*.js
+deploy-*.md
+node_modules/
+/target
+/dist
+secret.txt
