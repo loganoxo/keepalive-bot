@@ -73,12 +73,12 @@ async function checkSingleUrl(url) {
 
         try {
             //构建防缓存 URL
-            const timestamp = Date.now();
-            const random = Math.floor(Math.random() * 1000);
-            const separator = url.includes('?') ? '&' : '?';
-            const noCacheUrl = `${url}${separator}_nocache=${timestamp}${random}`;
+            // const timestamp = Date.now();
+            // const random = Math.floor(Math.random() * 1000);
+            // const separator = url.includes('?') ? '&' : '?';
+            // const noCacheUrl = `${url}${separator}_nocache=${timestamp}${random}`;
 
-            const res = await fetch(noCacheUrl, {
+            const res = await fetch(url, {
                 method: 'GET',
                 headers: {
                     //设置防缓存请求头
