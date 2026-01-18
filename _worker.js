@@ -91,7 +91,7 @@ async function checkSingleUrl(url) {
             });
             clearTimeout(timeoutId);
 
-            if (res.ok) {
+            if (res.ok && res.status===200) {
                 // ✅ 成功：直接返回结果，结束循环
                 return {
                     url,
