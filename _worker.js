@@ -23,9 +23,9 @@ const HELP_TEXT = `
 `;
 
 // === 配置常量 ===
-const MAX_RETRIES = 3;    // 最大重试次数
-const RETRY_DELAY = 5000; // 重试间隔 (毫秒)
-const TIMEOUT_MS = 10000; // 单次请求超时时间 (毫秒)
+const MAX_RETRIES = 2;    // 最大重试次数
+const RETRY_DELAY = 1000; // 重试间隔 (毫秒)
+const TIMEOUT_MS = 2000; // 单次请求超时时间 (毫秒)
 
 /**
  * 校验 URL 格式
