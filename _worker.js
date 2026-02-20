@@ -25,7 +25,7 @@ const HELP_TEXT = `
 // === 配置常量 ===
 const MAX_RETRIES = 2;    // 最大重试次数
 const RETRY_DELAY = 1000; // 重试间隔 (毫秒)
-const TIMEOUT_MS = 2000; // 单次请求超时时间 (毫秒)
+const TIMEOUT_MS = 3000; // 单次请求超时时间 (毫秒)
 
 /**
  * 校验 URL 格式
@@ -79,19 +79,22 @@ async function checkSingleUrl(url) {
             // const noCacheUrl = `${url}${separator}_nocache=${timestamp}${random}`;
 
             const res = await fetch(url, {
-                method: 'GET',
+                method: 'HEAD',
                 headers: {
                     //设置防缓存请求头
                     'Cache-Control': 'no-cache, no-store, must-revalidate',
                     'Pragma': 'no-cache',
                     'Expires': '0',
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+                    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                    'Connection': 'keep-alive',
                     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
                 },
                 signal: controller.signal
             });
             clearTimeout(timeoutId);
 
-            if (res.ok && res.status===200) {
+            if (res.ok && res.status === 200) {
                 // ✅ 成功：直接返回结果，结束循环
                 return {
                     url,
