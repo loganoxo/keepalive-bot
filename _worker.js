@@ -22,7 +22,9 @@ const HELP_TEXT = `
 /help   查看帮助
 `;
 
-// cloudflare cron: 0 */12 * * *
+// cloudflare cron:
+// 46 1-23/8 2-30/2 * *   偶数天
+// 3 0-22/12 1-31/2 * *   奇数天
 
 // === 配置常量 ===
 const MAX_RETRIES = 2;    // 最大重试次数
