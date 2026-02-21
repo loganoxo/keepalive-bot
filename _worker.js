@@ -22,6 +22,8 @@ const HELP_TEXT = `
 /help   查看帮助
 `;
 
+// cloudflare cron: 0 */12 * * *
+
 // === 配置常量 ===
 const MAX_RETRIES = 2;    // 最大重试次数
 const RETRY_DELAY = 1000; // 重试间隔 (毫秒)
